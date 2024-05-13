@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    body {
+        background-color: lightblue;
+        margin: 0;
+        height: 100vh;}
+</style>
+    <div class="container" style="width: 100%; margin: 0 auto; border: 2px solid black; text-align: center; font-size: xxx-large;">
+        <img src="https://digiversedownloads.com/_nav_icons_/SlideShow.jpg">
+            <b> Slideshow:</b>
+            <script>
+                fetch('getimages.php')
+                .then(response => response.json())
+                .then(data => {
+                const imageArray = data;
+                const img = document.createElement('img');
+                const isLandscape = window.innerWidth > window.innerHeight;
+                let topValue = isLandscape ? "27%" : "11%";
+                const styles = `position: absolute; top: ${topValue}; left: 2.5%; width: 95%; height: 90%; object-fit: stretch;`
+                img.style.cssText = styles;
+                function getRandomImage() {
+                return imageArray[Math.floor(Math.random() * imageArray.length)];
+            }
+                setInterval(() => { img.src = getRandomImage(); }, 3000);
+                document.querySelector('.container').appendChild(img);
+                window.addEventListener('resize', () => {
+                topValue = window.innerWidth > window.innerHeight ? "27%" : "11%";
+                img.style.top = topValue;
+            });
+            })
+                .catch(error => console.error(error));
+</script>
+</div>
+</html>

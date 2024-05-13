@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang="en">
+<meta property="og:image" content="index_DDprvw.png">
+
+<style> body {margin: 0; height: 100vh}
+
+.center {display: block;  margin-left: auto;  margin-right: auto;  width: 100%;  height: 100vh; object-fit: stretch;}</style>
+
+<button id='menubtn' onclick='toggleMenu()' style="width: 100%; position: fixed; top:0; left:0;background-color: black; color: lightgray; text-align: center; font-size: xxx-large; height: 80px"><u>===M E N U===</u></button>
+<iframe id="my-iframe" style = "position:fixed; top:60px; left:30%; border: none; z-index: 100;" src="_nav_menu.html" width="40%" height='0px'></iframe>
+
+<script>
+    var toggleVar = 0; var iframe = document.getElementById('my-iframe');
+    function toggleMenu() {
+        toggleVar = toggleVar === 0 ? 1 : 0;
+        if (toggleVar === 1) {iframe.style.height = '80%';}
+        else {iframe.style.height = '0%';}}</script>
+
+
+<br><br><br><br>
+
+<img src="index_DigiverseDownloads.gif" class="center">
+
+
+<audio id="WTD" src="index_DDWelcomeSong.wav"></audio>
+
+<button onclick="playAudioA()" style="font-size: xx-large; width: 100%; height: 90px; background-color: turquoise; position: fixed; top: 67.5%;">WELCOME TO DIGIVERSE DOWNLOADS</button>
+
+<script>
+    function playAudioA() {
+        const audio = document.getElementById("WTD");
+        audio.play();}
+</script>
+
+<a href="https://digiversedownloads.com/digitalstore/contact-me/"><button style="font-size: xx-large; height: 90px; width: 100%; background-color: lightgreen; position: fixed; top: 84%">WebApp Assistance Contact Form</button></a>
